@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TEKNOFEST motorlarını OpenRocket'a ekleme · SBTÜ Roket ve İtki Topluluğu</title>
+<meta name="description" content="TEKNOFEST 2026 motor dosyalarını OpenRocket programına 5 adımda ekleme rehberi.">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="ust">
+<div class="kap">
+<a class="marka" href="../index.html"><img src="../assets/logo.png" alt="SBTÜ Roket ve İtki Topluluğu logosu" width="46" height="46"><span><b>SBTÜ Roket</b><small>ve İtki Topluluğu</small></span></a>
+<nav class="menu" aria-label="Ana menü"><a href="../index.html#misyon">Misyonumuz</a><a href="../index.html#kaynaklar">Kaynaklar</a><a href="../index.html#blog">Blog</a><a href="../index.html#iletisim">İletişim</a></nav>
+<div class="ust-sag"><a class="btn btn-ana btn-kucuk" href="https://chat.whatsapp.com/FBx9B10y2oZHvUGBucpbbo" target="_blank" rel="noopener">Katıl</a></div>
+</div>
+</header>
+<main>
+<div class="kap makale-ust">
+<a class="geri" href="../index.html#blog">← Tüm yazılar</a>
+<p class="ust-etiket">Rehber</p>
+<h1>TEKNOFEST motorlarını OpenRocket'a ekleme</h1>
+<p class="meta">23 Kasım 2026 · 5 dk okuma</p>
+</div>
+<div class="kap"><div class="makale-kapak" style="background:linear-gradient(135deg,#33405F,#151C2F)"><span class="foto-etiket"></span><img class="foto" src="../img/motor-rehberi.png" alt="OpenRocket ayarlar penceresi" onload="this.previousElementSibling.remove()" onerror="this.setAttribute('data-yok','')"></div></div>
+<article class="makale">
+<p>TEKNOFEST 2026 Roket Yarışması'nın motorları OpenRocket'ın hazır kütüphanesinde yok. Yarışma komitesinin yayımladığı resmi motor dosyalarını (.eng) bir kez programa tanıtmanız gerekiyor. İşlem yaklaşık 10 dakika sürer.</p>
+
+<a class="kutu-link" href="../index.html#kaynaklar"><span><b style="display:block;font-family:var(--baslik);font-size:20px">TEKNOFEST Motorları 2026</b><span style="color:var(--metin-3);font-size:15px">L1256 · M1850 · N3300 .eng dosyaları</span></span><span class="btn btn-ana btn-kucuk">İndir</span></a>
+
+<h2>1. Dosyaları sabit bir klasöre koyun</h2>
+<p>Paketi indirip açın ve üç .eng dosyasını kalıcı bir klasöre koyun (örneğin <em>Belgeler/OpenRocket_Motorlar</em>). Klasörü sonradan taşımayın; OpenRocket motorları her açılışta buradan okur.</p>
+
+<h2>2. Klasörü OpenRocket'a tanıtın</h2>
+<p><strong>Edit → Preferences</strong> menüsünü açın.</p>
+<img src="../img/rehber/s1_edit_preferences.jpg" alt="Edit menüsünden Preferences seçimi, kırmızı ile işaretli" style="border-radius:12px;margin:0 auto 22px;max-width:420px">
+<p><strong>General</strong> sekmesinde <strong>User-defined thrust curves</strong> satırının yanındaki <strong>Add</strong> düğmesine basıp klasörünüzü seçin, ardından <strong>OK</strong> deyin.</p>
+<img src="../img/rehber/s2_user_thrust_curves.jpg" alt="User-defined thrust curves alanı ve Add düğmesi işaretli" style="border-radius:12px;margin-bottom:22px">
+
+<h2>3. Programı yeniden başlatın</h2>
+<p>OpenRocket'ı tamamen kapatıp yeniden açın. Motor ayarı ancak program yeniden başlayınca devreye girer. Motorlar yine görünmezse bilgisayarı yeniden başlatın.</p>
+
+<h2>4. Motoru tasarıma ekleyin</h2>
+<p>Tasarımınızda <strong>Motors &amp; Configuration</strong> sekmesine geçin, motor yuvasını işaretleyin ve <strong>Select motor</strong>'a basın.</p>
+<img src="../img/rehber/s3_motor_config.jpg" alt="Motors and Configuration sekmesi, motor yuvası ve Select motor işaretli" style="border-radius:12px;margin-bottom:22px">
+<p>Arama kutusuna <strong>Teknofest26</strong> yazın. Motor listede yoksa <strong>Limit motor diameter to mount diameter</strong> işaretini kaldırın; TEKNOFEST motorları 75 ve 98 mm çaplıdır.</p>
+<img src="../img/rehber/s4_select_motor.jpg" alt="Motor seçim penceresinde arama, üretici, çap filtresi ve OK işaretli" style="border-radius:12px;margin-bottom:22px">
+
+<h2>5. Kaydedin ve kontrol edin</h2>
+<p>Tasarımı kaydedin, programı kapatıp yeniden açın ve motorun seçili kaldığını görün. Simülasyonu çalıştırdığınızda irtifa ve hız değerleri geliyorsa işlem tamam.</p>
+<div class="not"><strong>Unutmayın:</strong> Motor dosyaları .ork dosyasının içine gömülmez. Tasarımı açacak her bilgisayarda bu adımlar bir kez yapılmalıdır.</div>
+<p style="font-size:14px;color:var(--metin-3)">Kaynaklar: <a href="https://teknofest.org/tr/yarismalar/roket-yarismasi/">TEKNOFEST Roket Yarışması dokümanları</a> · <a href="https://openrocket.readthedocs.io/en/latest/setup/preferences.html">OpenRocket dokümantasyonu</a>. Ekran görüntüleri OpenRocket resmi dokümantasyonundandır.</p>
+</article>
+</main>
+<footer class="alt"><div class="kap"><div class="dip"><span>© 2026 SBTÜ Roket ve İtki Topluluğu</span><span><a class="lnk" href="mailto:sbturoket@gmail.com">sbturoket@gmail.com</a> · <a class="lnk" href="https://instagram.com/sbtu_roket">@sbtu_roket</a></span></div></div></footer>
+</body>
+</html>
